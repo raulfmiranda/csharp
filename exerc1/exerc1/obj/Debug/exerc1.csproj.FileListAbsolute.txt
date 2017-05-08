@@ -4,3 +4,9 @@ C:\Users\1781850\Documents\Csharp\exerc1\exerc1\bin\Debug\exerc1.pdb
 C:\Users\1781850\Documents\Csharp\exerc1\exerc1\obj\Debug\exerc1.csprojResolveAssemblyReference.cache
 C:\Users\1781850\Documents\Csharp\exerc1\exerc1\obj\Debug\exerc1.exe
 C:\Users\1781850\Documents\Csharp\exerc1\exerc1\obj\Debug\exerc1.pdb
+C:\Users\Antonio Augusto\Documents\Documentos (copia linux) 07 maio 2017\UNI7\Csharp\csExerc\exerc1\exerc1\bin\Debug\exerc1.exe.config
+C:\Users\Antonio Augusto\Documents\Documentos (copia linux) 07 maio 2017\UNI7\Csharp\csExerc\exerc1\exerc1\bin\Debug\exerc1.exe
+C:\Users\Antonio Augusto\Documents\Documentos (copia linux) 07 maio 2017\UNI7\Csharp\csExerc\exerc1\exerc1\bin\Debug\exerc1.pdb
+C:\Users\Antonio Augusto\Documents\Documentos (copia linux) 07 maio 2017\UNI7\Csharp\csExerc\exerc1\exerc1\obj\Debug\exerc1.csprojResolveAssemblyReference.cache
+C:\Users\Antonio Augusto\Documents\Documentos (copia linux) 07 maio 2017\UNI7\Csharp\csExerc\exerc1\exerc1\obj\Debug\exerc1.exe
+C:\Users\Antonio Augusto\Documents\Documentos (copia linux) 07 maio 2017\UNI7\Csharp\csExerc\exerc1\exerc1\obj\Debug\exerc1.pdb

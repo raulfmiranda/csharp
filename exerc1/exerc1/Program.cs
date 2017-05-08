@@ -1,5 +1,13 @@
-﻿/* Exercício 1  [06/05/2017]
- * Concatenação de duas strings 
+﻿/* 
+ * Aluno: Raul Figueira Miranda
+ * Exercício 1  [06/05/2017]
+ * 
+ * Declare duas variáveis string e atribua a elas os valores “Hello” e “World”. 
+ * Declare uma variável do tipo object e atribua a ela a concatenação das duas 
+ * primeiras variáveis (adicione um espaço entre ambas). Declare uma terceira variável string 
+ * e a inicialize com o valor da variável do tipo object criada anteriormente 
+ * (será preciso fazer um type casting).
+ * 
  */
 
 using System;

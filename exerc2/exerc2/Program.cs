@@ -1,10 +1,9 @@
 ﻿/*
- * Created by Raul.
- * User: 1781850
- * Date: 06/05/2017
- * Time: 14:45
+ * Aluno: Raul Figueira Miranda
+ * Exercício 2 [06/05/2017]
  * 
- * Exercício 2: encontrar maior valor entre 5 variáveis dadas.
+ * Escreva um programa que encontra o maior valor entre 5 variáveis dadas.
+ * 
  */
 using System;
 
@@ -14,7 +13,7 @@ namespace exerc2
 	{
 		public static void Main(string[] args)
 		{
-			double[] numeros = new double[5] {1, 3.7, 3.1, 3, -5};
+			double[] numeros = new double[5] {1, 3.7, 3.1, 10, -5};
 			double maior = numeros[0];
 			int tamanho = numeros.Length;
 			

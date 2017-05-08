@@ -1,0 +1,5 @@
+C:\Users\Antonio Augusto\Documents\Documentos (copia linux) 07 maio 2017\UNI7\Csharp\csExerc\exerc6\exerc6\obj\Debug\exerc6.csprojResolveAssemblyReference.cache
+C:\Users\Antonio Augusto\Documents\Documentos (copia linux) 07 maio 2017\UNI7\Csharp\csExerc\exerc6\exerc6\bin\Debug\exerc6.exe
+C:\Users\Antonio Augusto\Documents\Documentos (copia linux) 07 maio 2017\UNI7\Csharp\csExerc\exerc6\exerc6\bin\Debug\exerc6.pdb
+C:\Users\Antonio Augusto\Documents\Documentos (copia linux) 07 maio 2017\UNI7\Csharp\csExerc\exerc6\exerc6\obj\Debug\exerc6.exe
+C:\Users\Antonio Augusto\Documents\Documentos (copia linux) 07 maio 2017\UNI7\Csharp\csExerc\exerc6\exerc6\obj\Debug\exerc6.pdb

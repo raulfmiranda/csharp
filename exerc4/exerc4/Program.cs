@@ -1,10 +1,10 @@
 ﻿/*
- * Created by SharpDevelop.
- * User: 1781850
- * Date: 06/05/2017
- * Time: 15:49
+ * Aluno: Raul Figueira Miranda
+ * Exercício 4 [06/05/2017]
  * 
- * Exercício 4.
+ * Escreva um programa que imprima todos os números de 1 até N 
+ * que não sejam divisíveis por 3 e por 7 ao mesmo tempo.
+ * 
  */
 using System;
 
@@ -23,6 +23,7 @@ namespace exerc4
 				Console.Write(" "+i);
 			}
 			
+			Console.WriteLine("");			
 			
 			// TODO: Implement Functionality Here
 			

@@ -1,10 +1,10 @@
 ﻿/*
- * Created by SharpDevelop.
- * User: 1781850
- * Date: 06/05/2017
- * Time: 16:38
+ * Aluno: Raul Figueira Miranda
+ * Exercício 5 [06/05/2017]
  * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
+ * Escreva um programa que leia do console uma sequência 
+ * de N números inteiros e retorne o maior e o menor deles.
+ * 
  */
 using System;
 
@@ -14,14 +14,15 @@ namespace exerc5
 	{
 		public static void Main(string[] args)
 		{
-			int N = 3;
-			int count = 0;
-			int numLido = int.Parse(Console.ReadLine());
+			int N = 5; // N: quantidade de números a serem lidos
+			Console.WriteLine("Escolha "+N+" números inteiros teclando enter após cada um deles...\n");
+			int numLido = 0;
 			int numMaior = numLido;
-			int numMenor = numLido;			
+			int numMenor = numLido;
 			
-			for(int i = 1; i < N; i++)
+			for(int i = 0; i < N; i++)
 			{
+				Console.Write("Digite um número e tecle enter: ");
 				numLido = int.Parse(Console.ReadLine());
 				if(numLido > numMaior)
 					numMaior = numLido;
@@ -29,7 +30,7 @@ namespace exerc5
 					numMenor = numLido;
 			}
 			
-			Console.WriteLine(" Número maior: "+numMaior+" Número menor: "+numMenor);
+			Console.WriteLine("\nNúmero maior: "+numMaior+"\nNúmero menor: "+numMenor+"\n");
 			
 			// TODO: Implement Functionality Here
 			
