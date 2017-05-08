@@ -1,0 +1,12 @@
+C:\Users\1781850\Documents\Csharp\exerc2\exerc2\bin\Debug\exerc2.exe.config
+C:\Users\1781850\Documents\Csharp\exerc2\exerc2\bin\Debug\exerc2.exe
+C:\Users\1781850\Documents\Csharp\exerc2\exerc2\bin\Debug\exerc2.pdb
+C:\Users\1781850\Documents\Csharp\exerc2\exerc2\obj\Debug\exerc2.csprojResolveAssemblyReference.cache
+C:\Users\1781850\Documents\Csharp\exerc2\exerc2\obj\Debug\exerc2.exe
+C:\Users\1781850\Documents\Csharp\exerc2\exerc2\obj\Debug\exerc2.pdb
+C:\Users\Antonio Augusto\Documents\Documentos (copia linux) 07 maio 2017\UNI7\Csharp\exerc2\exerc2\bin\Debug\exerc2.exe.config
+C:\Users\Antonio Augusto\Documents\Documentos (copia linux) 07 maio 2017\UNI7\Csharp\exerc2\exerc2\bin\Debug\exerc2.exe
+C:\Users\Antonio Augusto\Documents\Documentos (copia linux) 07 maio 2017\UNI7\Csharp\exerc2\exerc2\bin\Debug\exerc2.pdb
+C:\Users\Antonio Augusto\Documents\Documentos (copia linux) 07 maio 2017\UNI7\Csharp\exerc2\exerc2\obj\Debug\exerc2.csprojResolveAssemblyReference.cache
+C:\Users\Antonio Augusto\Documents\Documentos (copia linux) 07 maio 2017\UNI7\Csharp\exerc2\exerc2\obj\Debug\exerc2.exe
+C:\Users\Antonio Augusto\Documents\Documentos (copia linux) 07 maio 2017\UNI7\Csharp\exerc2\exerc2\obj\Debug\exerc2.pdb

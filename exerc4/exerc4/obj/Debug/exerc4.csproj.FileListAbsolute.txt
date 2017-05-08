@@ -1,0 +1,6 @@
+C:\Users\1781850\Documents\Csharp\exerc4\exerc4\bin\Debug\exerc4.exe.config
+C:\Users\1781850\Documents\Csharp\exerc4\exerc4\bin\Debug\exerc4.exe
+C:\Users\1781850\Documents\Csharp\exerc4\exerc4\bin\Debug\exerc4.pdb
+C:\Users\1781850\Documents\Csharp\exerc4\exerc4\obj\Debug\exerc4.csprojResolveAssemblyReference.cache
+C:\Users\1781850\Documents\Csharp\exerc4\exerc4\obj\Debug\exerc4.exe
+C:\Users\1781850\Documents\Csharp\exerc4\exerc4\obj\Debug\exerc4.pdb

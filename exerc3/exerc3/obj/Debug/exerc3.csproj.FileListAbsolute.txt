@@ -1,0 +1,6 @@
+C:\Users\1781850\Documents\Csharp\exerc3\exerc3\obj\Debug\exerc3.csprojResolveAssemblyReference.cache
+C:\Users\1781850\Documents\Csharp\exerc3\exerc3\bin\Debug\exerc3.exe.config
+C:\Users\1781850\Documents\Csharp\exerc3\exerc3\bin\Debug\exerc3.exe
+C:\Users\1781850\Documents\Csharp\exerc3\exerc3\bin\Debug\exerc3.pdb
+C:\Users\1781850\Documents\Csharp\exerc3\exerc3\obj\Debug\exerc3.exe
+C:\Users\1781850\Documents\Csharp\exerc3\exerc3\obj\Debug\exerc3.pdb

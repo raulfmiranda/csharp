@@ -1,0 +1,6 @@
+C:\Users\1781850\Documents\Csharp\exerc5\exerc5\bin\Debug\exerc5.exe.config
+C:\Users\1781850\Documents\Csharp\exerc5\exerc5\bin\Debug\exerc5.exe
+C:\Users\1781850\Documents\Csharp\exerc5\exerc5\bin\Debug\exerc5.pdb
+C:\Users\1781850\Documents\Csharp\exerc5\exerc5\obj\Debug\exerc5.csprojResolveAssemblyReference.cache
+C:\Users\1781850\Documents\Csharp\exerc5\exerc5\obj\Debug\exerc5.exe
+C:\Users\1781850\Documents\Csharp\exerc5\exerc5\obj\Debug\exerc5.pdb
