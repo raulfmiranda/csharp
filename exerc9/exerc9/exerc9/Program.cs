@@ -10,14 +10,71 @@ namespace exerc9
     {
         static void Main(string[] args)
         {
-            int[] array = {3, 2, 3, 4, 2, 2, 4};
+            int difItensAnt;
+            int difItensProx;
+            int maiorSeqTamanho = 0;
+            int indexMaiorSeq = 0;
+            int count = 0;
+            int[] maiorSeq;
 
-            for(int i = 0; i < array.Length; i++)
+            // (Des)Comente para escolher o array desejado
+            // int[] array = {3, 2};
+            // int[] array = {3, 2, 3, 4, 2, 2, 4};
+            int[] array = { 3, 2, 3, 4, 2, 2, 4, 10, 12, 14, 16, 0, 8 };
+
+
+            if (array.Length <= 2)
             {
-                Console.Write(" " + array[i]);
+                ImprimeString(array);
+            }
+            else
+            {
+                for (var i = 0; i < array.Length - 2; i++)
+                {
+                    difItensAnt = array[i + 1] - array[i];
+                    difItensProx = array[i + 2] - array[i + 1];
+
+                    if (difItensProx == difItensAnt)
+                    {
+                        count++;
+                        if (count > maiorSeqTamanho)
+                        {
+                            maiorSeqTamanho = count;
+                            indexMaiorSeq = i;
+                        }
+                    }
+                    else
+                    {
+                        count = 0;
+                    }
+                }
+
+                maiorSeq = new int[maiorSeqTamanho + 2];
+
+                for (var j = 0; j < maiorSeq.Length; j++)
+                {
+                    maiorSeq[j] = array[indexMaiorSeq - maiorSeqTamanho + j + 1];
+                }
+
+                ImprimeString(maiorSeq);
+
             }
 
             Console.ReadLine();
+        }
+
+        public static void ImprimeString(int[] array)
+        {
+            Console.Write("{ ");
+            for (var i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i]);
+                if (i < array.Length - 1)
+                {
+                    Console.Write(", ");
+                }
+            }
+            Console.Write(" }");
         }
     }
 }
