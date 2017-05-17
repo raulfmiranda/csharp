@@ -38,7 +38,7 @@ namespace exerc13
                 c = frase[j];
 
                 if (c > 32 && c < 65)
-                {                    
+                {
                     frase = frase.Replace(c, '\0');
                 }
             }
@@ -48,24 +48,28 @@ namespace exerc13
             char delimitador = ' ';
             string[] substrings = frase.Split(delimitador);
 
-            Dictionary<string, int> contaStrings = new Dictionary<string, int>();
-
-            for(int i = 0; i < substrings.Length; i++)
+            for (int k = 0; k < substrings.Length; k++)
             {
-                if (!contaStrings.ContainsKey(substrings[i]) && substrings[i] != "\0")
+                substrings[k] = substrings[k].Trim(new Char[] { '\0' });
+            }
+
+            Dictionary<string, int> contaStrings = new Dictionary<string, int>();
+            int strLength;
+            for (int i = 0; i < substrings.Length; i++)
+            {
+                if (!contaStrings.ContainsKey(substrings[i]))
                 {
-                    contaStrings.Add(substrings[i], 1);
+                    strLength = substrings[i].Length;
+                    if (strLength > 0)
+                        contaStrings.Add(substrings[i], 1);
                 }
                 else
                 {
-                    if(substrings[i] != "\0")
-                    {
-                        contaStrings[substrings[i]]++;
-                    }                    
+                    contaStrings[substrings[i]]++;
                 }
             }
 
-            foreach(string key in contaStrings.Keys)
+            foreach (string key in contaStrings.Keys)
             {
                 Console.WriteLine(key + " -> " + contaStrings[key]);
             }
