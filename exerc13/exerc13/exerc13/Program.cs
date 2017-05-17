@@ -27,9 +27,9 @@ namespace exerc13
     {
         static void Main(string[] args)
         {
-            string frase = "Este é o TEXTO. Texto, texto, TeXtO - ESTE TEXTO! Este é o texto?";
-            // Console.WriteLine(" Digite uma frase: ");
-            // string frase = Console.ReadLine();
+            Console.Write(" Digite uma frase: ");
+            string frase = Console.ReadLine();
+            // frase = "Este é o TEXTO. Texto, texto, TeXtO - ESTE TEXTO! Este é o texto?";
             frase = frase.ToLower();
 
             char c;
@@ -42,8 +42,6 @@ namespace exerc13
                     frase = frase.Replace(c, '\0');
                 }
             }
-
-            Console.WriteLine(frase);
 
             char delimitador = ' ';
             string[] substrings = frase.Split(delimitador);
@@ -69,9 +67,12 @@ namespace exerc13
                 }
             }
 
-            foreach (string key in contaStrings.Keys)
+            // Encontrei essa dica neste link:
+            // http://stackoverflow.com/questions/21411384/sort-dictionary-string-int-by-value
+
+            foreach (var par in contaStrings.OrderBy(r => r.Value).Take(contaStrings.Count))
             {
-                Console.WriteLine(key + " -> " + contaStrings[key]);
+                Console.WriteLine(" {0} -> {1}", par.Key, par.Value);
             }
 
             Console.ReadLine();
