@@ -1,4 +1,13 @@
-﻿using System;
+﻿/* 
+ * Aluno: Raul Figueira Miranda
+ * Exercício 9  [15/05/2017]
+ * 
+ * Escreva um programa que encontra a maior sequência incremental dentro de um array. 
+ * Exemplo:{3, 2, 3, 4, 2, 2, 4} -> {2, 3, 4}.
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

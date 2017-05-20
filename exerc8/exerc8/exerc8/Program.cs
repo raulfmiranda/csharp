@@ -1,4 +1,14 @@
-﻿using System;
+﻿/* 
+ * Aluno: Raul Figueira Miranda
+ * Exercício 8  [13/05/2017]
+ * 
+ * Escreva um programa que declara um array de 20 inteiros e 
+ * inicializa cada elemento pelo seu índice multiplicado por 6. 
+ * Imprima o array obitido no console.
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
