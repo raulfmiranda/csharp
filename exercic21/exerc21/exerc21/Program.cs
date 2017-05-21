@@ -26,4 +26,11 @@ namespace exerc21
         {
         }
     }
+
+    abstract class Shape
+    {
+        private double width, height;
+
+        public abstract int CalculateSurface();
+    }
 }
