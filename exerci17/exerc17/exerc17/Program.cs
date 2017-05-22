@@ -19,11 +19,34 @@ namespace exerc17
     {
         static void Main(string[] args)
         {
+            List<double> ints = new List<double>();
+            ints.Add(1.1);
+            ints.Add(2.3);
+            Console.WriteLine(ints.Soma());
+
+            Console.ReadLine();
         }
     }
 
-    public static class IEnumerableTExtensoes
+    public static class IEnumerableExtensoes
     {
-       
+        public static T Soma<T>(this IEnumerable<T> nums)
+        {
+            double soma = 0.0;
+
+            foreach (T num in nums)
+            {
+                soma += (double)Convert.ChangeType(num, typeof(double));
+            }
+            return (T)Convert.ChangeType(soma, typeof(T));
+        }
+
+        public static T Media<T>(this IEnumerable<T> nums)
+        {
+            double soma = (double)Convert.ChangeType(nums.Soma(), typeof(double));
+            //int quant = (int)nums.Count; 
+            
+            return (T)Convert.ChangeType(soma, typeof(T));
+        }
     }
 }
