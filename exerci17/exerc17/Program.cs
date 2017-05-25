@@ -19,13 +19,37 @@ namespace exerc17
     {
         static void Main(string[] args)
         {
-            List<double> nums = new List<double>();
-            nums.Add(1.1);
-            nums.Add(2.3);
-            nums.Add(4.1);
-            nums.Add(2.5);
-            Console.WriteLine(" Soma: {0}\n Produto: {1}", nums.Soma(), nums.Produto());
-            Console.WriteLine(" Mínimo: {0}\n Máximo: {1}\n Média: {2}", nums.Minimo(), nums.Maximo(), nums.Media());
+            List<double> numsDouble = new List<double>();
+            numsDouble.Add(1.1);
+            numsDouble.Add(2.3);
+            numsDouble.Add(4.1);
+            numsDouble.Add(2.5);
+            Console.Write("\n { ");
+
+            foreach(double numDouble in numsDouble)
+            {
+                Console.Write(" {0} ", numDouble);
+            }
+
+            Console.Write(" }\n");
+            Console.WriteLine("\n Soma: {0}\n Produto: {1}", numsDouble.Soma(), numsDouble.Produto());
+            Console.WriteLine(" Mínimo: {0}\n Máximo: {1}\n Média: {2}", numsDouble.Minimo(), numsDouble.Maximo(), numsDouble.Media());
+
+            List<int> numsInt = new List<int>();
+            numsInt.Add(1);
+            numsInt.Add(3);
+            numsInt.Add(4);
+            numsInt.Add(5);
+            Console.Write("\n { ");
+
+            foreach (int numInt in numsInt)
+            {
+                Console.Write(" {0} ", numInt);
+            }
+
+            Console.Write(" }\n");
+            Console.WriteLine("\n Soma: {0}\n Produto: {1}", numsInt.Soma(), numsInt.Produto());
+            Console.WriteLine(" Mínimo: {0}\n Máximo: {1}\n Média: {2}", numsInt.Minimo(), numsInt.Maximo(), numsInt.Media());
 
             Console.ReadLine();
         }
@@ -37,63 +61,105 @@ namespace exerc17
         {
             double soma = 0.0;
 
-            foreach (T num in nums)
+            Type t = nums.GetType();
+            bool isList = t.IsGenericType && t.GetGenericTypeDefinition() == typeof(List<>);
+
+            if (isList)
             {
-                soma += (double)Convert.ChangeType(num, typeof(double));
+                foreach (T num in nums)
+                {
+                    soma += (double)Convert.ChangeType(num, typeof(double));
+                }
+                return (T)Convert.ChangeType(soma, typeof(T));
             }
-            return (T)Convert.ChangeType(soma, typeof(T));
+            // retorna -1.0 se não for uma lista
+            return (T)Convert.ChangeType(-1.0, typeof(T));
         }
 
         public static T Produto<T>(this IEnumerable<T> nums)
         {
             double prod = 1.0;
 
-            foreach (T num in nums)
+            Type t = nums.GetType();
+            bool isList = t.IsGenericType && t.GetGenericTypeDefinition() == typeof(List<>);
+
+            if (isList)
             {
-                prod *= (double)Convert.ChangeType(num, typeof(double));
+                foreach (T num in nums)
+                {
+                    prod *= (double)Convert.ChangeType(num, typeof(double));
+                }
+                return (T)Convert.ChangeType(prod, typeof(T));
             }
-            return (T)Convert.ChangeType(prod, typeof(T));
+            // retorna -1.0 se não for uma lista
+            return (T)Convert.ChangeType(-1.0, typeof(T));
         }
 
         public static T Minimo<T>(this IEnumerable<T> nums)
-        {
-            double minimo = (double)Convert.ChangeType(nums.ElementAt(0), typeof(double));
+        {     
             double numDouble = 0.0;
 
-            foreach (T num in nums)
+            Type t = nums.GetType();
+            bool isList = t.IsGenericType && t.GetGenericTypeDefinition() == typeof(List<>);
+
+            if (isList)
             {
-                numDouble = (double)Convert.ChangeType(num, typeof(double));
-                if (numDouble < minimo)
+                double minimo = (double)Convert.ChangeType(nums.ElementAt(0), typeof(double));
+
+                foreach (T num in nums)
                 {
-                    minimo = numDouble;
+                    numDouble = (double)Convert.ChangeType(num, typeof(double));
+                    if (numDouble < minimo)
+                    {
+                        minimo = numDouble;
+                    }
                 }
+                return (T)Convert.ChangeType(minimo, typeof(T));
             }
-            return (T)Convert.ChangeType(minimo, typeof(T));
+            // retorna -1.0 se não for uma lista
+            return (T)Convert.ChangeType(-1.0, typeof(T));
         }
 
         public static T Maximo<T>(this IEnumerable<T> nums)
-        {
-            double maximo = (double)Convert.ChangeType(nums.ElementAt(0), typeof(double));
+        {          
             double numDouble = 0.0;
 
-            foreach (T num in nums)
+            Type t = nums.GetType();
+            bool isList = t.IsGenericType && t.GetGenericTypeDefinition() == typeof(List<>);
+
+            if (isList)
             {
-                numDouble = (double)Convert.ChangeType(num, typeof(double));
-                if (numDouble > maximo)
+                double maximo = (double)Convert.ChangeType(nums.ElementAt(0), typeof(double));
+
+                foreach (T num in nums)
                 {
-                    maximo = numDouble;
+                    numDouble = (double)Convert.ChangeType(num, typeof(double));
+                    if (numDouble > maximo)
+                    {
+                        maximo = numDouble;
+                    }
                 }
+                return (T)Convert.ChangeType(maximo, typeof(T));
             }
-            return (T)Convert.ChangeType(maximo, typeof(T));
+            // retorna -1.0 se não for uma lista
+            return (T)Convert.ChangeType(-1.0, typeof(T));
         }
 
-        public static T Media<T>(this IEnumerable<T> nums)
+        public static double Media<T>(this IEnumerable<T> nums)
         {
-            double soma = (double)Convert.ChangeType(nums.Soma(), typeof(double));
-            int quant = (int)nums.Count();
-            double media = soma / quant;
+            Type t = nums.GetType();
+            bool isList = t.IsGenericType && t.GetGenericTypeDefinition() == typeof(List<>);
 
-            return (T)Convert.ChangeType(media, typeof(T));
+            if (isList)
+            {
+                double soma = (double)Convert.ChangeType(nums.Soma(), typeof(double));
+                int quant = (int)nums.Count();
+                double media = soma / quant;
+
+                return media;
+            }
+            // retorna -1.0 se não for uma lista
+            return -1.0;
         }
     }
 }
