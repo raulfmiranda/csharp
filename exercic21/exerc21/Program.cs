@@ -59,7 +59,7 @@ namespace exerc21
                 }
                 else
                 {
-
+                    Console.WriteLine("Shape desconhecido.");
                 }
             }
             Console.ReadLine();
