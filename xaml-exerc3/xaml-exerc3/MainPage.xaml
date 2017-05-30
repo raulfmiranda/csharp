@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="xaml_exerc3.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:xaml_exerc3"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Black">
+        <StackPanel Margin="10">
+            <TextBox x:Name="tbKeyDown" KeyDown="TextBox_KeyDown" Background="White" Margin="0,100,0,0" Text="com KeyDown"></TextBox>
+            <TextBox Background="White" Margin="0,25,0,0" Text="simples TextBox sem KeyDown =("></TextBox>
+        </StackPanel>    
+    </Grid>
+</Page>
