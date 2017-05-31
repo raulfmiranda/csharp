@@ -10,7 +10,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel x:Name="stackPanel" Margin="10">
             <TextBox x:Name="tbNomeBotao" HorizontalAlignment="Stretch" Margin="0,50,0,0" PlaceholderText="nome do botão"></TextBox>
-            <Button x:Name="btCriarBotao" Click="btCriarBotao_Click" Content="Criar novo botão" HorizontalAlignment="Stretch"></Button>
+            <Button x:Name="btCriarBotao" Click="btCriarBotao_Click" Margin="0,0,0,50" Content="Criar novo botão" HorizontalAlignment="Stretch"></Button>
         </StackPanel>
     </Grid>
 </Page>

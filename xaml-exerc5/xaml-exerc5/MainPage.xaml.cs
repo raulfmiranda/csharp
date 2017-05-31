@@ -22,6 +22,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Popups;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -52,12 +53,14 @@ namespace xaml_exerc5
             }
         }
 
-        private void btClicado(object sender, RoutedEventArgs e)
+        private async void btClicado(object sender, RoutedEventArgs e)
         {
             if(sender is Button)
             {
                 string nomeBotao = (string)(sender as Button).Content;
-                this.tbNomeBotao.Text = "Meu nome é " + nomeBotao;
+                var msg = new MessageDialog("Clique do botão " + nomeBotao + "!");
+                
+                await msg.ShowAsync();
             }
         }
     }
