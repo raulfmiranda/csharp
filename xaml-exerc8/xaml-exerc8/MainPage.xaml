@@ -5,13 +5,38 @@
     xmlns:local="using:xaml_exerc8"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:xaml_exerc8"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ListView Margin="10" x:Name="lvDados">
-            <GridView>
-
-            </GridView>
-        </ListView>
+        <StackPanel Margin="10,50,0,0">
+            <Grid Background="Beige">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="32"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Id" Grid.Column="0" Margin="10,0,0,0" FontWeight="ExtraBold"></TextBlock>
+                <TextBlock Text="Enabled" Grid.Column="1" Margin="10,0,0,0" FontWeight="ExtraBold"></TextBlock>
+                <TextBlock Text="Value" Grid.Column="2" Margin="10,0,0,0" FontWeight="ExtraBold"></TextBlock>
+            </Grid>
+            <ListView ItemsSource="{x:Bind Dados}" x:Name="lvDados" Background="AliceBlue">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="data:Dado">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="32"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{x:Bind Id}" Grid.Column="0"></TextBlock>
+                            <CheckBox IsChecked="{x:Bind Enabled}" Grid.Column="1"></CheckBox>
+                            <TextBox Text="{x:Bind Value}" Grid.Column="2"></TextBox>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        
     </Grid>
 </Page>
