@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="xaml_exerc9.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:xaml_exerc9"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Width="1000"
+    Height="350"
+    mc:Ignorable="d">
+
+    <StackPanel Background="Blue" Padding="25" Orientation="Horizontal">
+        <Border Background="Aqua" Margin="0,0,25,0">
+            <TextBlock x:Name="textBlock1" TextAlignment="Center" Padding="0,138,0,0" Width="100" Height="300"></TextBlock>
+        </Border>
+        <Border Background="Aqua" Margin="0,0,25,0">
+            <TextBlock x:Name="textBlock2" TextAlignment="Center" Padding="0,138,0,0" Width="100" Height="300"></TextBlock>
+        </Border>
+        <Border Background="Aqua" Margin="0,0,25,0">
+            <TextBlock x:Name="textBlock3" TextAlignment="Center" Padding="0,138,0,0" Width="100" Height="300"></TextBlock>
+        </Border>
+        <Border Background="Aqua" Margin="0,0,25,0">
+            <StackPanel Width="100" Height="300" Padding="10">
+                <Border Background="LightCoral" Height="65" Margin="0,0,0,10">
+                    <TextBlock x:Name="textBlock4" TextAlignment="Center" Padding="0,10,0,0"></TextBlock>
+                </Border>
+                <Border Background="LightCoral" Height="65" Margin="0,0,0,10">
+                    <TextBlock x:Name="textBlock5" TextAlignment="Center" Padding="0,10,0,0"></TextBlock>
+                </Border>
+                <Border Background="LightCoral" Height="65" Margin="0,0,0,10">
+                    <TextBlock x:Name="textBlock6" TextAlignment="Center" Padding="0,10,0,0"></TextBlock>
+                </Border>
+            </StackPanel>
+        </Border>
+        <Grid Background="Aqua" Height="300" Width="450" Padding="15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Padding="0,35,0,0" Background="LightCoral">
+                <TextBlock TextAlignment="Center" Text="Some Text"/>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Padding="0,60,0,0" Background="LightCoral" Margin="0,15,0,0">
+                <TextBlock x:Name="textBlock7" TextAlignment="Center"></TextBlock>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="1" Background="LightCoral" Margin="15,15,0,-15" Padding="0,25,0,0">
+                <TextBlock x:Name="textBlock8" TextAlignment="Center"></TextBlock>
+            </Border>
+            <Border Grid.Row="1" Grid.Column="2" Background="LightCoral" Margin="15,15,0,-15">
+                <TextBlock x:Name="textBlock9" TextAlignment="Center" Padding="0,25,0,0"></TextBlock>
+            </Border>
+            <Border Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Background="LightCoral" Margin="15,30,0,0" Padding="0,20,0,0">
+                <TextBlock TextAlignment="Center" Text="Some Text"></TextBlock>
+            </Border>
+        </Grid>
+    </StackPanel>
+</Page>
