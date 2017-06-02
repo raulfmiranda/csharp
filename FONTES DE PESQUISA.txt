@@ -22,6 +22,9 @@ https://www.youtube.com/watch?v=cyq_ho4QflQ
 
 ------------------------------------------
 
+Como Consumir API Restful no Xamarin Forms
+https://www.fabiosilvalima.net/como-consumir-api-restful-no-xamarin-forms/
+
 Logando no seu site utilizando api do Facebook:
 https://daviwp.com/logando-no-seu-site-utilizando-api-do-facebook/
 
