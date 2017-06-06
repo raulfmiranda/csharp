@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace WikipediaViewer
+namespace Weather4U
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -29,18 +29,8 @@ namespace WikipediaViewer
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            RootObject wikipediaSearch = await WikipediaMapProxy.GetResult("");
-            // Dictionary<string, object> wikipediaSearch = await WikipediaMapProxy.GetResult("");
-
-            try
-            {
-                ResultadoTextBlock.Text = wikipediaSearch.query.pages.GetHashCode().ToString();
-                // ResultadoTextBlock.Text = wikipediaSearch.ToString();
-            }
-            catch(Exception ex)
-            {
-                ResultadoTextBlock.Text = ex.Message + " : " + ex.StackTrace;
-            }           
+            RootObject weatherSearch = await WeatherBox.GetWeather("Fortaleza");
+            ResultadoTextBlock.Text = weatherSearch.weather[0].description;
         }
     }
 }
