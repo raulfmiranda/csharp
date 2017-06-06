@@ -36,12 +36,13 @@ namespace Weather4U
 
                 nameCountryTextBlock.Text = 
                     weatherSearch.name + " - " + weatherSearch.sys.country;
-                iconTextBlock.Text = weatherSearch.weather[0].icon;
                 mainDescriptionTextBlock.Text =
                     weatherSearch.weather[0].main + ": " + weatherSearch.weather[0].description;
                 tempTextBlock.Text = weatherSearch.main.temp + "";
                 tempMinTextBlock.Text = weatherSearch.main.temp_min + "";
                 tempMaxTextBlock.Text = weatherSearch.main.temp_max + "";
+                                
+                weatherGrid.Visibility = Visibility.Visible;
             }
             else
             {
