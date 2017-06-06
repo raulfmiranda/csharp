@@ -8,7 +8,33 @@
     mc:Ignorable="d">
 
     <StackPanel Background="LightBlue" >
-        <Button Content="Search Weather" HorizontalAlignment="Center" Click="Button_Click" Margin="0,50,0,0"></Button>
-        <TextBlock x:Name="ResultadoTextBlock"></TextBlock>
+        <TextBlock FontSize="50" FontFamily="Curlz MT" HorizontalAlignment="Center" Margin="0,50,0,0" FontWeight="Bold" Foreground="Black">Weather4U</TextBlock>
+        <StackPanel Padding="15">
+            <TextBox x:Name="cityTextBox" PlaceholderText="Enter with a city name" Margin="10"></TextBox>
+            <Button Content="Search Weather" HorizontalAlignment="Center"  Click="Button_Click"></Button>
+            <Grid Margin="10" Background="Beige">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="HotPink"  Margin="10">
+                    <TextBlock x:Name="nameCountryTextBlock"></TextBlock>
+                </Border>
+                <TextBlock x:Name="iconTextBlock" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"></TextBlock>
+                <TextBlock x:Name="mainDescriptionTextBlock"  Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></TextBlock>
+                <TextBlock x:Name="tempTextBlock" Grid.Row="3" Grid.Column="1"></TextBlock>
+                <TextBlock x:Name="tempMinTextBlock" Grid.Row="4" Grid.Column="1"></TextBlock>
+                <TextBlock x:Name="tempMaxTextBlock" Grid.Row="5" Grid.Column="1"></TextBlock>
+            </Grid>
+        </StackPanel>
+        
     </StackPanel>
 </Page>

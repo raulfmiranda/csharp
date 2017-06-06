@@ -29,8 +29,24 @@ namespace Weather4U
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            RootObject weatherSearch = await WeatherBox.GetWeather("Fortaleza");
-            ResultadoTextBlock.Text = weatherSearch.weather[0].description;
+            if(cityTextBox != null && cityTextBox.Text != "")
+            {
+                string city = cityTextBox.Text;
+                RootObject weatherSearch = await WeatherBox.GetWeather(city);
+
+                nameCountryTextBlock.Text = 
+                    weatherSearch.name + " - " + weatherSearch.sys.country;
+                iconTextBlock.Text = weatherSearch.weather[0].icon;
+                mainDescriptionTextBlock.Text =
+                    weatherSearch.weather[0].main + ": " + weatherSearch.weather[0].description;
+                tempTextBlock.Text = weatherSearch.main.temp + "";
+                tempMinTextBlock.Text = weatherSearch.main.temp_min + "";
+                tempMaxTextBlock.Text = weatherSearch.main.temp_max + "";
+            }
+            else
+            {
+                nameCountryTextBlock.Text = "Enter with a city name inside de textbox above.";
+            }     
         }
     }
 }
