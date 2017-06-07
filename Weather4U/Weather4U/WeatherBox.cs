@@ -127,5 +127,6 @@ namespace Weather4U
         public string name { get; set; }
         [DataMember]
         public int cod { get; set; }
+        public DateTime dateTime { get; set; }
     }
 }

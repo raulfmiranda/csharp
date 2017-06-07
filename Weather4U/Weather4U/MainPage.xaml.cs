@@ -11,6 +11,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -33,15 +34,31 @@ namespace Weather4U
             {
                 string city = cityTextBox.Text;
                 RootObject weatherSearch = await WeatherBox.GetWeather(city);
+                weatherSearch.dateTime = DateTime.Now;
 
                 nameCountryTextBlock.Text = 
                     weatherSearch.name + " - " + weatherSearch.sys.country;
                 mainDescriptionTextBlock.Text =
                     weatherSearch.weather[0].main + ": " + weatherSearch.weather[0].description;
-                tempTextBlock.Text = weatherSearch.main.temp + "";
-                tempMinTextBlock.Text = weatherSearch.main.temp_min + "";
-                tempMaxTextBlock.Text = weatherSearch.main.temp_max + "";
-                                
+
+                string tempStr = weatherSearch.main.temp + "";
+                double kelvin = double.Parse(tempStr);
+                tempTextBlock.Text = kelvin + " K ( " + (kelvin - 273.15) + " ºC )";
+
+                tempStr = weatherSearch.main.temp_min + "";
+                kelvin = double.Parse(tempStr);
+                tempMinTextBlock.Text = kelvin + " K ( " + (kelvin - 273.15) + " ºC )";
+
+                tempStr = weatherSearch.main.temp_max + "";
+                kelvin = double.Parse(tempStr);
+                tempMaxTextBlock.Text = kelvin + " K ( " + (kelvin - 273.15) + " ºC )";
+
+                string imagePath = "ms-appx:///Assets/" + weatherSearch.weather[0].icon + ".png";
+                Uri uri = new Uri(imagePath, UriKind.RelativeOrAbsolute);
+                iconImage.Source = new BitmapImage(uri);
+
+                dateTimeTextBlock.Text = DateTime.Now.ToString();
+
                 weatherGrid.Visibility = Visibility.Visible;
             }
             else

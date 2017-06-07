@@ -11,9 +11,14 @@
         <TextBlock FontSize="50" FontFamily="Curlz MT" HorizontalAlignment="Center" Margin="0,50,0,0" FontWeight="Bold" Foreground="Black">Weather4U</TextBlock>
         <StackPanel Padding="15">
             <TextBox x:Name="cityTextBox" PlaceholderText="Enter with a city name" Margin="10"></TextBox>
-            <Button Content="Search Weather" HorizontalAlignment="Center"  Click="Button_Click"></Button>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Search Weather" Background="White" BorderBrush="Gray" HorizontalAlignment="Center" Click="Button_Click" Margin="5"></Button>
+                <Button Content="Go to Saved Weathers" Background="Gray" Foreground="White" BorderBrush="White" HorizontalAlignment="Center" Click="Button_Click" Margin="5"></Button>
+            </StackPanel>
             <Grid x:Name="weatherGrid" Margin="10" Visibility="Collapsed" Background="Beige" Padding="10">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -26,33 +31,37 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>                
                 
-                <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="HotPink" Margin="5" HorizontalAlignment="Stretch">
+                <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="HotPink" HorizontalAlignment="Stretch">
                     <TextBlock x:Name="nameCountryTextBlock" TextAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="AntiqueWhite" HorizontalAlignment="Stretch"></TextBlock>
                 </Border>
 
-                <Image Grid.Row="1" Grid.Column="0" Grid.RowSpan="4"  x:Name="iconImageLeft" HorizontalAlignment="Stretch" Height="100" Width="100" Source="Assets/01d.png"></Image>
+                <Image Grid.Row="1" Grid.Column="0" Grid.RowSpan="4"  x:Name="iconImage" HorizontalAlignment="Stretch" Height="100" Width="100"></Image>
+                
                 <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Background="AntiqueWhite" HorizontalAlignment="Stretch">
                     <TextBlock x:Name="mainDescriptionTextBlock" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="HotPink" FontWeight="ExtraBlack"></TextBlock>
                 </Border>
-                <Border Grid.Row="2" Grid.Column="1">
-                    <TextBlock HorizontalAlignment="Center">Temperature</TextBlock>
+                <Border Grid.Row="2" Grid.Column="1" Background="AntiqueWhite" HorizontalAlignment="Stretch">
+                    <TextBlock HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="HotPink" FontWeight="ExtraBlack">Temperature</TextBlock>
                 </Border>
-                <Border Grid.Row="2" Grid.Column="2">
-                    <TextBlock x:Name="tempTextBlock" ></TextBlock>
+                <Border Grid.Row="2" Grid.Column="2" Background="AntiqueWhite" HorizontalAlignment="Stretch">
+                    <TextBlock x:Name="tempTextBlock" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="HotPink" FontWeight="ExtraBlack"></TextBlock>
                 </Border>
-                <Border Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center">
-                    <TextBlock>Minimum Temperature</TextBlock>
+                <Border Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch"  Background="AntiqueWhite">
+                    <TextBlock HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="HotPink" FontWeight="ExtraBlack">Minimum Temperature</TextBlock>
                 </Border>
-                <Border Grid.Row="3" Grid.Column="2">
-                    <TextBlock x:Name="tempMinTextBlock"></TextBlock>
+                <Border Grid.Row="3" Grid.Column="2" Background="AntiqueWhite" HorizontalAlignment="Stretch">
+                    <TextBlock x:Name="tempMinTextBlock" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="HotPink" FontWeight="ExtraBlack"></TextBlock>
                 </Border>
-                <Border Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center">
-                    <TextBlock>Maximum Temperature</TextBlock>
+                <Border Grid.Row="4" Grid.Column="1" Background="AntiqueWhite" HorizontalAlignment="Stretch">
+                    <TextBlock HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="HotPink" FontWeight="ExtraBlack">Maximum Temperature</TextBlock>
                 </Border>
-                <Border Grid.Row="4" Grid.Column="2">
-                    <TextBlock x:Name="tempMaxTextBlock"></TextBlock>                    
+                <Border Grid.Row="4" Grid.Column="2" Background="AntiqueWhite" HorizontalAlignment="Stretch">
+                    <TextBlock x:Name="tempMaxTextBlock" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="HotPink" FontWeight="ExtraBlack"></TextBlock>                    
                 </Border>
-                
+                <Border Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Background="HotPink" HorizontalAlignment="Stretch">
+                    <TextBlock x:Name="dateTimeTextBlock" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="AntiqueWhite" FontWeight="ExtraBlack"></TextBlock>
+                </Border>
+                <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Background="White" Foreground="Gray" BorderBrush="Gray">Save</Button>
             </Grid>
         </StackPanel>
         
