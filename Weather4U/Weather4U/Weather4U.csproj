@@ -103,6 +103,7 @@
       <DependentUpon>SavedWeathersPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="WeatherBox.cs" />
+    <Compile Include="WeatherController.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">

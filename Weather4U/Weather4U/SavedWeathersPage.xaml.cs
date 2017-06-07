@@ -23,10 +23,32 @@ namespace Weather4U
     /// </summary>
     public sealed partial class SavedWeathersPage : Page
     {
+        private List<RootObject> weathers;
+
         public SavedWeathersPage()
         {
             this.InitializeComponent();
-        }        
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if(e.Parameter != null)
+            {
+                weathers = (List<RootObject>)e.Parameter;
+                teste.Text = weathers.ElementAt(0).name;
+            }
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            
+        }
+
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage), weathers);
+        }
     }
 
+    
 }

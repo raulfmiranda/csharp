@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Weather4U
 {
-    class WeatherBox
+    public class WeatherBox
     {
         public async static Task<RootObject> GetWeather(string city)
         {

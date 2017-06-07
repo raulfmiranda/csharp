@@ -24,17 +24,21 @@ namespace Weather4U
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private WeatherController weatherCtrl;
+        private RootObject weatherSearch;
+
         public MainPage()
         {
             this.InitializeComponent();
+            weatherCtrl = new WeatherController();           
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_GetWeather(object sender, RoutedEventArgs e)
         {
             if(cityTextBox != null && cityTextBox.Text != "")
             {
                 string city = cityTextBox.Text;
-                RootObject weatherSearch = await WeatherBox.GetWeather(city);
+                weatherSearch = await WeatherBox.GetWeather(city);
                 weatherSearch.dateTime = DateTime.Now;
 
                 nameCountryTextBlock.Text = 
@@ -59,6 +63,8 @@ namespace Weather4U
                 iconImage.Source = new BitmapImage(uri);
 
                 dateTimeTextBlock.Text = DateTime.Now.ToString();
+                saveButton.Content = "Save";
+                saveButton.IsEnabled = true;
 
                 weatherGrid.Visibility = Visibility.Visible;
             }
@@ -68,9 +74,19 @@ namespace Weather4U
             }     
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Save(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(SavedWeathersPage));
+            if(weatherSearch != null)
+            {
+                weatherCtrl.addWeather(weatherSearch);
+                saveButton.Content = "Saved";
+                saveButton.IsEnabled = false;
+            }
+        }
+
+        private void Button_GoToSavedWeathersPage(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(SavedWeathersPage), weatherCtrl.weathers);
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -81,6 +97,11 @@ namespace Weather4U
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
+
+            if (e.Parameter != null)
+            {
+                weatherCtrl.weathers = (List<RootObject>)e.Parameter;
+            }
         }
     }
 }

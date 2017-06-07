@@ -12,8 +12,8 @@
         <StackPanel Padding="15">
             <TextBox x:Name="cityTextBox" PlaceholderText="Enter with a city name" Margin="10"></TextBox>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Content="Search Weather" Background="White" BorderBrush="Gray" HorizontalAlignment="Center" Click="Button_Click" Margin="5"></Button>
-                <Button Click="Button_Click_1" Content="Go to Saved Weathers" Background="Gray" Foreground="White" BorderBrush="White" HorizontalAlignment="Center" Margin="5"></Button>
+                <Button Content="Search Weather" Background="White" BorderBrush="Gray" HorizontalAlignment="Center" Click="Button_GetWeather" Margin="5"></Button>
+                <Button Click="Button_GoToSavedWeathersPage" Content="Go to Saved Weathers" Background="Gray" Foreground="White" BorderBrush="White" HorizontalAlignment="Center" Margin="5"></Button>
             </StackPanel>
             <Grid x:Name="weatherGrid" Margin="10" Visibility="Collapsed" Background="Beige" Padding="10">
                 <Grid.RowDefinitions>
@@ -61,7 +61,7 @@
                 <Border Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Background="HotPink" HorizontalAlignment="Stretch">
                     <TextBlock x:Name="dateTimeTextBlock" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="AntiqueWhite" FontWeight="ExtraBlack"></TextBlock>
                 </Border>
-                <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Background="White" Foreground="Gray" BorderBrush="Gray">Save</Button>
+                <Button x:Name="saveButton" Click="Button_Save" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Background="White" Foreground="Gray" BorderBrush="Gray">Save</Button>
             </Grid>
         </StackPanel>
         
