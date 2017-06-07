@@ -9,8 +9,10 @@
 
     <StackPanel Background="LightBlue">
         <TextBlock FontSize="50" FontFamily="Curlz MT" HorizontalAlignment="Center" Margin="0,50,0,0" FontWeight="Bold" Foreground="Black">Saved Weathers</TextBlock>
-        <Button x:Name="backButton" Click="backButton_Click">Back</Button>
-        <TextBlock x:Name="teste"></TextBlock>
+        <StackPanel Padding="15">
+            <Button Background="White" BorderBrush="Gray" HorizontalAlignment="Stretch"  x:Name="backButton" Click="backButton_Click">Back to Search Weather Page</Button>
+            <TextBlock x:Name="teste"></TextBlock>
+        </StackPanel>        
     </StackPanel>
 
 </Page>

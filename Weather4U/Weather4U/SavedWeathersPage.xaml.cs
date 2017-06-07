@@ -31,11 +31,14 @@ namespace Weather4U
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
+        {                       
             if(e.Parameter != null)
             {
                 weathers = (List<RootObject>)e.Parameter;
-                teste.Text = weathers.ElementAt(0).name;
+                if(weathers != null && weathers.Count > 0)
+                {
+                    teste.Text = weathers.ElementAt(0).name;
+                }                
             }
         }
 

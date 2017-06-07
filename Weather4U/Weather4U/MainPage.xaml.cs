@@ -91,15 +91,15 @@ namespace Weather4U
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
-
-            if (e.Parameter != null)
-            {
+                        
+            if (e.Parameter != null && e.Parameter.GetType().Equals(typeof(List<RootObject>)))
+            {                
                 weatherCtrl.weathers = (List<RootObject>)e.Parameter;
             }
         }
