@@ -9,10 +9,12 @@ namespace Weather4U
     class WeatherController
     {
         public List<RootObject> weathers { get; set; }
+        RootObject newWeather;
 
         public WeatherController()
         {
             weathers = new List<RootObject>();
+            newWeather = null;
         }
 
         public void addWeather(RootObject weather)
@@ -31,6 +33,25 @@ namespace Weather4U
                 }
             }
             return false;
+        }
+
+        public async void updateWeather(RootObject weather)
+        {
+            try
+            {
+                for (int i = 0; i < weathers.Count; i++)
+                {
+                    if (weathers[i].id == weather.id)
+                    {
+                        newWeather = await WeatherBox.GetWeather(weather.name);
+                        weathers[i] = newWeather;
+                    }
+                }
+            }
+            catch
+            {
+                return;
+            }
         }
     }
 }

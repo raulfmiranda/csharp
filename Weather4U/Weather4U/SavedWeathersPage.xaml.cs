@@ -89,6 +89,20 @@ namespace Weather4U
             }
             
             weathersListView.ItemsSource = weatherCtrl.weathers;
-        }        
+        }
+
+        private void updateButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (lastSelectedItem != null)
+            {
+                weatherCtrl.updateWeather(lastSelectedItem);
+                weathersListView.ItemsSource = weatherCtrl.weathers;
+                systemMsgTextBlock.Text = "Item updated!";
+            }
+            else
+            {
+                systemMsgTextBlock.Text = "Select an item before update it.";
+            }
+        }
     }    
 }

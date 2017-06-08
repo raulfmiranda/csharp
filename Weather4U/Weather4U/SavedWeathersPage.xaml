@@ -14,6 +14,7 @@
         <StackPanel Orientation="Horizontal" Margin="35,0,35,-5" HorizontalAlignment="Center">
             <Button Background="LightBlue"  BorderBrush="Gray" HorizontalAlignment="Center" x:Name="backButton" Click="backButton_Click"></Button>
             <Button x:Name="deleteButton" Click="deleteButton_Click" HorizontalAlignment="Center" Background="White" Foreground="Red" BorderBrush="Red">Delete Selected Item</Button>
+            <Button x:Name="updateButton" Click="updateButton_Click" Background="Blue" Foreground="White" BorderBrush="White">Update selected item</Button>
         </StackPanel>
         <Grid Padding="15">
             <Grid.RowDefinitions>              
