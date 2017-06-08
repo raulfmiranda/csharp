@@ -5,14 +5,80 @@
     xmlns:local="using:Weather4U"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Height="1000"
     mc:Ignorable="d">
 
     <StackPanel Background="LightBlue">
         <TextBlock FontSize="50" FontFamily="Curlz MT" HorizontalAlignment="Center" Margin="0,50,0,0" FontWeight="Bold" Foreground="Black">Saved Weathers</TextBlock>
-        <StackPanel Padding="15">
-            <Button Background="White" BorderBrush="Gray" HorizontalAlignment="Stretch"  x:Name="backButton" Click="backButton_Click">Back to Search Weather Page</Button>
-            <TextBlock x:Name="teste"></TextBlock>
-        </StackPanel>        
+        <Button Margin="35,0,35,-5" Background="LightBlue"  BorderBrush="Gray" HorizontalAlignment="Stretch"  x:Name="backButton" Click="backButton_Click">Go Back to Search Weather Page</Button>
+        <Grid Padding="15">
+            <Grid.RowDefinitions>              
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <ListView ItemsSource="{x:Bind weathers}" x:Name="weathersListView" Height="400" ScrollViewer.VerticalScrollBarVisibility="Auto"  HorizontalAlignment="Stretch">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:RootObject">
+                        <Grid Margin="10" Background="Beige" Padding="10" HorizontalAlignment="Stretch">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="HotPink" HorizontalAlignment="Stretch">
+                                <TextBlock Text="{x:Bind nameCountry}" TextAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="AntiqueWhite" HorizontalAlignment="Stretch"></TextBlock>
+                            </Border>
+
+                            <Image Source="{x:Bind iconImage}" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" HorizontalAlignment="Stretch" Height="100" Width="100"></Image>
+
+                            <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Background="AntiqueWhite" HorizontalAlignment="Stretch">
+                                <TextBlock Text="{x:Bind mainDescription}" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="HotPink" FontWeight="ExtraBlack"></TextBlock>
+                            </Border>
+                            <Border Grid.Row="2" Grid.Column="1" Background="AntiqueWhite" HorizontalAlignment="Stretch">
+                                <TextBlock Text="Temperature" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="HotPink" FontWeight="ExtraBlack">Temperature</TextBlock>
+                            </Border>
+                            <Border Grid.Row="2" Grid.Column="2" Background="AntiqueWhite" HorizontalAlignment="Stretch">
+                                <TextBlock Text="{x:Bind temp}" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="HotPink" FontWeight="ExtraBlack"></TextBlock>
+                            </Border>
+                            <Border Grid.Row="3" Grid.Column="1" HorizontalAlignment="Stretch"  Background="AntiqueWhite">
+                                <TextBlock Text="Minimum Temperature" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="HotPink" FontWeight="ExtraBlack">Minimum Temperature</TextBlock>
+                            </Border>
+                            <Border Grid.Row="3" Grid.Column="2" Background="AntiqueWhite" HorizontalAlignment="Stretch">
+                                <TextBlock Text="{x:Bind tempMin}" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="HotPink" FontWeight="ExtraBlack"></TextBlock>
+                            </Border>
+                            <Border Grid.Row="4" Grid.Column="1" Background="AntiqueWhite" HorizontalAlignment="Stretch">
+                                <TextBlock Text="Maximum Temperature" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="HotPink" FontWeight="ExtraBlack">Maximum Temperature</TextBlock>
+                            </Border>
+                            <Border Grid.Row="4" Grid.Column="2" Background="AntiqueWhite" HorizontalAlignment="Stretch">
+                                <TextBlock Text="{x:Bind tempMax}" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="HotPink" FontWeight="ExtraBlack"></TextBlock>
+                            </Border>
+                            <Border Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Background="HotPink" HorizontalAlignment="Stretch">
+                                <TextBlock Text="{x:Bind dateTimeStr}" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="AntiqueWhite" FontWeight="ExtraBlack"></TextBlock>
+                            </Border>
+                            <Button x:Name="deleteButton" Click="deleteButton_Click" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Background="White" Foreground="Red" BorderBrush="Red">Delete</Button>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+        </Grid>        
     </StackPanel>
 
 </Page>

@@ -7,6 +7,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace Weather4U
 {
@@ -102,7 +103,7 @@ namespace Weather4U
 
     [DataContract]
     public class RootObject
-    {
+    {        
         [DataMember]
         public Coord coord { get; set; }
         [DataMember]
@@ -127,6 +128,60 @@ namespace Weather4U
         public string name { get; set; }
         [DataMember]
         public int cod { get; set; }
+
         public DateTime dateTime { get; set; }
+
+        public string dateTimeStr { get { return dateTime.ToString(); } }
+
+        public string nameCountry
+        {
+            get { return this.name + " - " + sys.country; }
+        }
+
+        public BitmapImage iconImage
+        {
+            get
+            {
+                string imagePath = "ms-appx:///Assets/" + weather[0].icon + ".png";
+                Uri uri = new Uri(imagePath, UriKind.RelativeOrAbsolute);
+                return new BitmapImage(uri);
+            }
+        }
+
+        public string mainDescription
+        {
+            get { return weather[0].main + ": " + weather[0].description; }
+        }
+
+        public string temp
+        {
+            get
+            {
+                string tempStr = main.temp + "";
+                double kelvin = double.Parse(tempStr);
+                return kelvin + " K ( " + (kelvin - 273.15) + " ºC )";
+            }
+        }
+
+        public string tempMin
+        {
+            get
+            {
+                string tempStr = main.temp_min + "";
+                double kelvin = double.Parse(tempStr);
+                return kelvin + " K ( " + (kelvin - 273.15) + " ºC )";
+            }
+        }
+
+        public string tempMax
+        {
+            get
+            {
+                string tempStr = main.temp_max + "";
+                double kelvin = double.Parse(tempStr);
+                return kelvin + " K ( " + (kelvin - 273.15) + " ºC )";
+            }
+        }
+        
     }
 }

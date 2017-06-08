@@ -34,11 +34,7 @@ namespace Weather4U
         {                       
             if(e.Parameter != null)
             {
-                weathers = (List<RootObject>)e.Parameter;
-                if(weathers != null && weathers.Count > 0)
-                {
-                    teste.Text = weathers.ElementAt(0).name;
-                }                
+                weathers = (List<RootObject>)e.Parameter;                                
             }
         }
 
@@ -50,6 +46,11 @@ namespace Weather4U
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage), weathers);
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 

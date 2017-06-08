@@ -38,35 +38,44 @@ namespace Weather4U
             if(cityTextBox != null && cityTextBox.Text != "")
             {
                 string city = cityTextBox.Text;
-                weatherSearch = await WeatherBox.GetWeather(city);
-                weatherSearch.dateTime = DateTime.Now;
+                systemMsgTextBlock.Text = "";
 
-                nameCountryTextBlock.Text = 
-                    weatherSearch.name + " - " + weatherSearch.sys.country;
-                mainDescriptionTextBlock.Text =
-                    weatherSearch.weather[0].main + ": " + weatherSearch.weather[0].description;
+                try
+                {
+                    weatherSearch = await WeatherBox.GetWeather(city);
+                    weatherSearch.dateTime = DateTime.Now;
 
-                string tempStr = weatherSearch.main.temp + "";
-                double kelvin = double.Parse(tempStr);
-                tempTextBlock.Text = kelvin + " K ( " + (kelvin - 273.15) + " ºC )";
+                    nameCountryTextBlock.Text =
+                        weatherSearch.name + " - " + weatherSearch.sys.country;
+                    mainDescriptionTextBlock.Text =
+                        weatherSearch.weather[0].main + ": " + weatherSearch.weather[0].description;
 
-                tempStr = weatherSearch.main.temp_min + "";
-                kelvin = double.Parse(tempStr);
-                tempMinTextBlock.Text = kelvin + " K ( " + (kelvin - 273.15) + " ºC )";
+                    string tempStr = weatherSearch.main.temp + "";
+                    double kelvin = double.Parse(tempStr);
+                    tempTextBlock.Text = kelvin + " K ( " + (kelvin - 273.15) + " ºC )";
 
-                tempStr = weatherSearch.main.temp_max + "";
-                kelvin = double.Parse(tempStr);
-                tempMaxTextBlock.Text = kelvin + " K ( " + (kelvin - 273.15) + " ºC )";
+                    tempStr = weatherSearch.main.temp_min + "";
+                    kelvin = double.Parse(tempStr);
+                    tempMinTextBlock.Text = kelvin + " K ( " + (kelvin - 273.15) + " ºC )";
 
-                string imagePath = "ms-appx:///Assets/" + weatherSearch.weather[0].icon + ".png";
-                Uri uri = new Uri(imagePath, UriKind.RelativeOrAbsolute);
-                iconImage.Source = new BitmapImage(uri);
+                    tempStr = weatherSearch.main.temp_max + "";
+                    kelvin = double.Parse(tempStr);
+                    tempMaxTextBlock.Text = kelvin + " K ( " + (kelvin - 273.15) + " ºC )";
 
-                dateTimeTextBlock.Text = DateTime.Now.ToString();
-                saveButton.Content = "Save";
-                saveButton.IsEnabled = true;
+                    string imagePath = "ms-appx:///Assets/" + weatherSearch.weather[0].icon + ".png";
+                    Uri uri = new Uri(imagePath, UriKind.RelativeOrAbsolute);
+                    iconImage.Source = new BitmapImage(uri);
 
-                weatherGrid.Visibility = Visibility.Visible;
+                    dateTimeTextBlock.Text = DateTime.Now.ToString();
+                    saveButton.Content = "Save";
+                    saveButton.IsEnabled = true;
+
+                    weatherGrid.Visibility = Visibility.Visible;
+                }
+                catch
+                {
+                    systemMsgTextBlock.Text = "City not found.";
+                }  
             }
             else
             {

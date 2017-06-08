@@ -11,9 +11,12 @@
         <TextBlock FontSize="50" FontFamily="Curlz MT" HorizontalAlignment="Center" Margin="0,50,0,0" FontWeight="Bold" Foreground="Black">Weather4U</TextBlock>
         <StackPanel Padding="15">
             <TextBox x:Name="cityTextBox" PlaceholderText="Enter with a city name" Margin="10"></TextBox>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Content="Search Weather" Background="White" BorderBrush="Gray" HorizontalAlignment="Center" Click="Button_GetWeather" Margin="5"></Button>
-                <Button Click="Button_GoToSavedWeathersPage" Content="Go to Saved Weathers" Background="Gray" Foreground="White" BorderBrush="White" HorizontalAlignment="Center" Margin="5"></Button>
+            <StackPanel HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Search Weather" Background="White" BorderBrush="Gray" HorizontalAlignment="Center" Click="Button_GetWeather" Margin="5"></Button>
+                    <Button Click="Button_GoToSavedWeathersPage" Content="Go to Saved Weathers" Background="Gray" Foreground="White" BorderBrush="White" HorizontalAlignment="Center" Margin="5"></Button>
+                </StackPanel>
+                <TextBlock x:Name="systemMsgTextBlock" HorizontalAlignment="Stretch" TextAlignment="Center"></TextBlock>
             </StackPanel>
             <Grid x:Name="weatherGrid" Margin="10" Visibility="Collapsed" Background="Beige" Padding="10">
                 <Grid.RowDefinitions>
