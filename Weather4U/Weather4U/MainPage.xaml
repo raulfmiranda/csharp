@@ -16,7 +16,7 @@
                     <Button Content="Search Weather" Background="White" BorderBrush="Gray" HorizontalAlignment="Center" Click="Button_GetWeather" Margin="5"></Button>
                     <Button Click="Button_GoToSavedWeathersPage" Content="Go to Saved Weathers" Background="Gray" Foreground="White" BorderBrush="White" HorizontalAlignment="Center" Margin="5"></Button>
                 </StackPanel>
-                <TextBlock x:Name="systemMsgTextBlock" HorizontalAlignment="Stretch" TextAlignment="Center"></TextBlock>
+                <TextBlock x:Name="systemMsgTextBlock" Foreground="Red" FontWeight="ExtraBold" HorizontalAlignment="Stretch" TextAlignment="Center"></TextBlock>
             </StackPanel>
             <Grid x:Name="weatherGrid" Margin="10" Visibility="Collapsed" Background="Beige" Padding="10">
                 <Grid.RowDefinitions>

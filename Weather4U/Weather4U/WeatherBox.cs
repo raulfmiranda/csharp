@@ -8,6 +8,7 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 
@@ -188,7 +189,7 @@ namespace Weather4U
                 return kelvin + " K ( " + (kelvin - 273.15) + " ºC )";
             }
         }
-        
+
         public SolidColorBrush backgroundColor { get; set; }
     }
 }

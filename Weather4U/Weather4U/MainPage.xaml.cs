@@ -69,6 +69,7 @@ namespace Weather4U
                     saveButton.Content = "Save";
                     saveButton.IsEnabled = true;
 
+                    systemMsgTextBlock.Text = "";
                     weatherGrid.Visibility = Visibility.Visible;
                 }
                 catch
@@ -78,7 +79,7 @@ namespace Weather4U
             }
             else
             {
-                nameCountryTextBlock.Text = "Enter with a city name inside de textbox above.";
+                systemMsgTextBlock.Text = "Where's the city name?";
             }     
         }
 
@@ -94,7 +95,7 @@ namespace Weather4U
 
         private void Button_GoToSavedWeathersPage(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(SavedWeathersPage), weatherCtrl.weathers);
+            Frame.Navigate(typeof(SavedWeathersPage), weatherCtrl);
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -106,9 +107,9 @@ namespace Weather4U
         {
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = AppViewBackButtonVisibility.Collapsed;
                         
-            if (e.Parameter != null && e.Parameter.GetType().Equals(typeof(List<RootObject>)))
+            if (e.Parameter != null && e.Parameter.GetType().Equals(typeof(WeatherController)))
             {                
-                weatherCtrl.weathers = (List<RootObject>)e.Parameter;
+                weatherCtrl = (WeatherController)e.Parameter;
             }
         }
     }

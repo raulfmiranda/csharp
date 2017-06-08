@@ -24,81 +24,71 @@ namespace Weather4U
     /// </summary>
     public sealed partial class SavedWeathersPage : Page
     {
-        private List<RootObject> weathers;
-        private IList<object> selectedItems;
-        private IList<object> removedItems;
+        private WeatherController weatherCtrl;
+        private RootObject lastSelectedItem;
+        private RootObject lastDeselectedItem;
 
         public SavedWeathersPage()
         {
             this.InitializeComponent();
+            backButton.Content = "< Go Back to Search Weather Page";
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {                       
-            if(e.Parameter != null)
+            if(e.Parameter != null && weatherCtrl == null)
             {
-                weathers = (List<RootObject>)e.Parameter;                                
+                weatherCtrl = (WeatherController)e.Parameter;                                
             }
-        }
-
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
-        {
-            
         }
 
         private void backButton_Click(object sender, RoutedEventArgs e)
         {
+            var weathers = weatherCtrl.weathers;
+
             foreach(RootObject weather in weathers)
             {
                 weather.backgroundColor = new SolidColorBrush(Colors.Beige);
-            }
-            selectedItems = null;
-            removedItems = null;
+            }          
+            
+            lastSelectedItem = null;
+            lastDeselectedItem = null;
 
-            Frame.Navigate(typeof(MainPage), weathers);
+            Frame.Navigate(typeof(MainPage), weatherCtrl);
         }
 
         private void deleteButton_Click(object sender, RoutedEventArgs e)
         {
-            /*
-            if(itemClicked != null)
+            if(lastSelectedItem != null)
             {
-                for(int i = 0; i < weathers.Count; i++)
-                {
-                    if(itemClicked.id == weathers[i].id)
-                    {
-                        weathers.RemoveAt(i);
-                        systemMsgTextBlock.Text = "Weather was deleted!";
-                        return;
-                    }
-                }
-            }*/
+                weatherCtrl.delWeather(lastSelectedItem);
+                weathersListView.ItemsSource = weatherCtrl.weathers;
+                systemMsgTextBlock.Text = "Item deleted!";
+            }
+            else
+            {
+                systemMsgTextBlock.Text = "Select an item before delete it.";
+            }
         }
 
         private void weathersListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            selectedItems = e.AddedItems as IList<object>;
-            removedItems = e.RemovedItems as IList<object>;
-
-            RootObject lastItemSelected;
-            RootObject lastItemRemoved;
+            IList<object> selectedItems = e.AddedItems as IList<object>;
+            IList<object> deselectedItems = e.RemovedItems as IList<object>;
 
             if (selectedItems != null && selectedItems.Count > 0)
             {
-                lastItemSelected = selectedItems[selectedItems.Count - 1] as RootObject;
-                lastItemSelected.backgroundColor = new SolidColorBrush(Colors.LightBlue);
+                lastSelectedItem = selectedItems[selectedItems.Count - 1] as RootObject;
+                lastSelectedItem.backgroundColor = new SolidColorBrush(Colors.LightBlue);                
             }
 
-            if(removedItems != null && removedItems.Count > 0)
+            if(deselectedItems != null && deselectedItems.Count > 0)
             {
-                lastItemRemoved = removedItems[removedItems.Count - 1] as RootObject;
-                lastItemRemoved.backgroundColor = new SolidColorBrush(Colors.Beige);
+                lastDeselectedItem = deselectedItems[deselectedItems.Count - 1] as RootObject;
+                lastDeselectedItem.backgroundColor = new SolidColorBrush(Colors.Beige);
             }
-
-            weathersListView.ItemsSource = weathers;
-        }
-        
-    }
-
-    
+            
+            weathersListView.ItemsSource = weatherCtrl.weathers;
+        }        
+    }    
 }
