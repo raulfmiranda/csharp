@@ -43,7 +43,6 @@ namespace Weather4U
                 try
                 {
                     weatherSearch = await WeatherBox.GetWeather(city);
-                    weatherSearch.dateTime = DateTime.Now;
 
                     nameCountryTextBlock.Text =
                         weatherSearch.name + " - " + weatherSearch.sys.country;

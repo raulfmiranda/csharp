@@ -7,6 +7,8 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI;
+using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 
 namespace Weather4U
@@ -26,6 +28,10 @@ namespace Weather4U
 
             var ms = new MemoryStream(Encoding.UTF8.GetBytes(result));
             var data = (RootObject)serializer.ReadObject(ms);
+
+            data.dateTime = DateTime.Now;
+            data.id = data.dateTime.Ticks;
+            data.backgroundColor = new SolidColorBrush(Colors.Beige);
 
             return data;
         }
@@ -122,8 +128,8 @@ namespace Weather4U
         public int dt { get; set; }
         [DataMember]
         public Sys sys { get; set; }
-        [DataMember]
-        public int id { get; set; }
+
+        public long id { get; set; }
         [DataMember]
         public string name { get; set; }
         [DataMember]
@@ -183,5 +189,6 @@ namespace Weather4U
             }
         }
         
+        public SolidColorBrush backgroundColor { get; set; }
     }
 }

@@ -19,5 +19,18 @@ namespace Weather4U
         {
             weathers.Add(weather);
         }
+
+        public bool delWeather(RootObject weather)
+        {
+            for(int i = 0; i < weathers.Count; i++)
+            {
+                if(weathers[i].id == weather.id)
+                {
+                    weathers.RemoveAt(i);
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

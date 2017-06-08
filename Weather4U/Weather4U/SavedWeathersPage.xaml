@@ -10,6 +10,7 @@
 
     <StackPanel Background="LightBlue">
         <TextBlock FontSize="50" FontFamily="Curlz MT" HorizontalAlignment="Center" Margin="0,50,0,0" FontWeight="Bold" Foreground="Black">Saved Weathers</TextBlock>
+        <TextBlock x:Name="systemMsgTextBlock" HorizontalAlignment="Stretch" TextAlignment="Center"></TextBlock>
         <Button Margin="35,0,35,-5" Background="LightBlue"  BorderBrush="Gray" HorizontalAlignment="Stretch"  x:Name="backButton" Click="backButton_Click">Go Back to Search Weather Page</Button>
         <Grid Padding="15">
             <Grid.RowDefinitions>              
@@ -19,10 +20,10 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             
-            <ListView ItemsSource="{x:Bind weathers}" x:Name="weathersListView" Height="400" ScrollViewer.VerticalScrollBarVisibility="Auto"  HorizontalAlignment="Stretch">
+            <ListView ItemsSource="{x:Bind weathers}" x:Name="weathersListView" SelectionChanged="weathersListView_SelectionChanged" Height="400" ScrollViewer.VerticalScrollBarVisibility="Auto"  HorizontalAlignment="Stretch">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="local:RootObject">
-                        <Grid Margin="10" Background="Beige" Padding="10" HorizontalAlignment="Stretch">
+                        <Grid Margin="10" Background="{x:Bind backgroundColor}" Padding="10" HorizontalAlignment="Stretch">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
