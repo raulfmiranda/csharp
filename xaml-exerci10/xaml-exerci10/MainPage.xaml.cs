@@ -1,4 +1,12 @@
-﻿using System;
+﻿/* 
+ * Aluno: Raul Figueira Miranda
+ * XAML - Exercício 10 [09/06/2017]
+ * 
+ * Create the following
+ *
+ */
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
