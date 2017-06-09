@@ -10,11 +10,11 @@
     <StackPanel Background="LightBlue" >
         <TextBlock FontSize="50" FontFamily="Curlz MT" HorizontalAlignment="Center" Margin="0,50,0,0" FontWeight="Bold" Foreground="Black">Weather4U</TextBlock>
         <StackPanel Padding="15">
-            <TextBox x:Name="cityTextBox" PlaceholderText="Enter with a city name" Margin="10"></TextBox>
+            <TextBox x:Name="cityTextBox" Margin="150,5,150,5" Foreground="Gray" TextAlignment="Center" PlaceholderText="Enter a city name" FontFamily="Segoe UI Black"/>
             <StackPanel HorizontalAlignment="Center">
                 <StackPanel Orientation="Horizontal">
                     <Button Content="Search Weather" Background="White" BorderBrush="Gray" HorizontalAlignment="Center" Click="Button_GetWeather" Margin="5"></Button>
-                    <Button Click="Button_GoToSavedWeathersPage" Content="Go to Saved Weathers" Background="Gray" Foreground="White" BorderBrush="White" HorizontalAlignment="Center" Margin="5"></Button>
+                    <Button Click="Button_GoToSavedWeathersPage" Content="Go to Saved Weathers" Background="Gray" Foreground="White" BorderBrush="White" HorizontalAlignment="Center" Margin="5" FontFamily="Yu Gothic Medium"></Button>
                 </StackPanel>
                 <TextBlock x:Name="systemMsgTextBlock" Foreground="Red" FontWeight="ExtraBold" HorizontalAlignment="Stretch" TextAlignment="Center"></TextBlock>
             </StackPanel>
@@ -32,14 +32,14 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>                
-                
+                </Grid.ColumnDefinitions>
+
                 <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="HotPink" HorizontalAlignment="Stretch">
                     <TextBlock x:Name="nameCountryTextBlock" TextAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="AntiqueWhite" HorizontalAlignment="Stretch"></TextBlock>
                 </Border>
 
                 <Image Grid.Row="1" Grid.Column="0" Grid.RowSpan="4"  x:Name="iconImage" HorizontalAlignment="Stretch" Height="100" Width="100"></Image>
-                
+
                 <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Background="AntiqueWhite" HorizontalAlignment="Stretch">
                     <TextBlock x:Name="mainDescriptionTextBlock" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="HotPink" FontWeight="ExtraBlack"></TextBlock>
                 </Border>
@@ -59,7 +59,7 @@
                     <TextBlock HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="HotPink" FontWeight="ExtraBlack">Maximum Temperature</TextBlock>
                 </Border>
                 <Border Grid.Row="4" Grid.Column="2" Background="AntiqueWhite" HorizontalAlignment="Stretch">
-                    <TextBlock x:Name="tempMaxTextBlock" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="HotPink" FontWeight="ExtraBlack"></TextBlock>                    
+                    <TextBlock x:Name="tempMaxTextBlock" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="HotPink" FontWeight="ExtraBlack"></TextBlock>
                 </Border>
                 <Border Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Background="HotPink" HorizontalAlignment="Stretch">
                     <TextBlock x:Name="dateTimeTextBlock" HorizontalAlignment="Stretch" TextAlignment="Center" Foreground="AntiqueWhite" FontWeight="ExtraBlack"></TextBlock>
@@ -67,6 +67,6 @@
                 <Button x:Name="saveButton" Click="Button_Save" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Stretch" Background="White" Foreground="Gray" BorderBrush="Gray">Save</Button>
             </Grid>
         </StackPanel>
-        
+
     </StackPanel>
 </Page>
