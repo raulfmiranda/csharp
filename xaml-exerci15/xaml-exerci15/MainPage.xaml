@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="xaml_exerci15.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:xaml_exerci15"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="White" Padding="30,150,30,0">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,50">
+            <TextBox PlaceholderText="Name" Width="400" HorizontalAlignment="Stretch"/>
+            <TextBlock Text=" Age: " Margin="5"/>
+            <TextBox Text="{Binding ElementName=ageSlider, Path=Value, Mode=TwoWay}" PlaceholderText="Age" HorizontalAlignment="Center"/>
+        </StackPanel>
+        <Slider Name="ageSlider" Margin="30,0,30,0" Value="50" Minimum="1" Maximum="100" TickFrequency="1" TickPlacement="BottomRight"/>
+    </StackPanel>
+</Page>
