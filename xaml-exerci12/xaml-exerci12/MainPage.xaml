@@ -8,7 +8,8 @@
     mc:Ignorable="d">
 
     <StackPanel Background="White" Padding="30,150,30,0">
-        <TextBlock FontSize="15" HorizontalAlignment="Center" Margin="0,0,0,20" Text="Eu sou um TextBlock"/>
-        <Slider Minimum="1" Maximum="10" TickFrequency="1" TickPlacement="BottomRight"/>
+        <TextBlock FontSize="{Binding ElementName=FontSizeSlider, Path=Value}" HorizontalAlignment="Center" Margin="0,0,0,40" Text="Eu sou um TextBlock"/>
+        <Slider Name="FontSizeSlider" Minimum="10" Maximum="30" Value="20" TickFrequency="1" TickPlacement="BottomRight"/>
+        <TextBlock Text="{Binding ElementName=FontSizeSlider, Path=Value}" HorizontalAlignment="Center" Foreground="Gray"/>
     </StackPanel>
 </Page>
