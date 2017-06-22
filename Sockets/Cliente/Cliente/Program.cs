@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * Trabalhando com soquetes no C#(csharp):
+ * http://www.devmedia.com.br/trabalhando-com-soquetes-no-c-csharp/4356
+ * 
+ * Transferindo arquivos usando Sockets:
+ * http://www.macoratti.net/14/06/c_sock1.htm
+ * 
+ */
+ 
+using System;
 using System.Text;
 using System.Net;
 using System.Net.Sockets;
